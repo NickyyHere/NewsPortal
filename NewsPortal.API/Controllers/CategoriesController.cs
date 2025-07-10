@@ -17,7 +17,11 @@ namespace NewsPortal.API.Controllers
         /// <summary>
         /// Get all categories
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// List of categories
+        /// </returns>
+        /// <response code="200">Ok</response>
+        /// <response code="500">Internal server error</response>
         [HttpGet]
         public async Task<ActionResult> GetCategories()
         {
@@ -25,10 +29,13 @@ namespace NewsPortal.API.Controllers
             return Ok(categories);
         }
         /// <summary>
-        /// Create new category
+        /// Create category
         /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
+        /// <param name="dto">DTO</param>
+        /// <response code="200">Ok</response>
+        /// <response code="400">BadRequest</response>
+        /// <response code="500">Internal server error</response>
+        /// <exception cref="UniqueConstraintViolationException">Thrown when category with the same name already exists</exception>
         [HttpPost]
         public async Task<ActionResult> CreateCategory([FromBody] CreateCategoryDTO dto)
         {
