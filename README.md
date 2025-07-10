@@ -81,6 +81,12 @@ Uruchamia kontener z aplikacją (wymaga poprawnego connection string w pliku .en
 
 ---
 
+## Swagger
+
+Projekt zawiera dokumentację swagger którą można znaleźć dodając do ścieżki "/swagger"
+
+---
+
 ## Przykładowe zapytania curl
 
 ### Pobierz listę artykułów:
